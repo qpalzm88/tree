@@ -194,6 +194,9 @@ public class Tree {
                     if (temp.getLeft() != null ||
                             temp.getRight() != null)
                         isRowEmpty = false;
+                } else {
+                    localStack.push(null);
+                    localStack.push(null);
                 }
 
             }

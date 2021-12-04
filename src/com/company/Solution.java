@@ -76,7 +76,6 @@ public class Solution {
         for (int i = 0; i <= maxSize; i++) {
             tree.insertTreeNode(getRandom(MAX_SIZE * 2));
         }
-        tree.printTreeLight();
         return tree.getRootTreeNode();
     }
 
