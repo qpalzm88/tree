@@ -5,12 +5,13 @@ import java.util.Random;
 
 public class Solution {
 
-    private static final int MAX_SIE = 100000;
+    private static final int MAX_SIZE = 100000;
     private static final int MAX_B = 110;
 
     public static void main(String[] args) {
         Solution solution = new Solution();
         TreeNode firstTree = solution.createFirstTree();
+
         solution.t2Sum(firstTree, 19);
         solution.t2Sum(firstTree, 40);
         TreeNode root = solution.createTree();
@@ -36,18 +37,17 @@ public class Solution {
             System.out.println("No such pair exists");
             return 0;
         }
-        System.out.println(firstNod);
         if (searchNod(firstNod, B, set)) {
             return 1;
         }
-        System.out.println("Подходящие узлы не найдены");
+        System.out.println("No such pair exists");
         return 0;
     }
 
     private boolean searchNod(TreeNode nod, int b, HashSet<Integer> set) {
         boolean result = false;
         if (set.contains(b - nod.getVal())) {
-            System.out.println("Один из узлов равен =" + nod.getVal());
+            System.out.println("Один из узлов равен = " + nod.getVal());
             return true;
         }
         set.add(nod.getVal());
@@ -70,11 +70,11 @@ public class Solution {
     }
 
     TreeNode createTree() {
-        int maxSize = getRandom(MAX_SIE);
-        System.out.println("Size Tree =" + maxSize);
+        int maxSize = getRandom(MAX_SIZE);
+        System.out.println(maxSize);
         Tree tree = new Tree();
         for (int i = 0; i <= maxSize; i++) {
-            tree.insertTreeNode(getRandom(MAX_SIE * 2));
+            tree.insertTreeNode(getRandom(MAX_SIZE * 2));
         }
         tree.printTreeLight();
         return tree.getRootTreeNode();
