@@ -31,6 +31,10 @@ public class Solution {
 
     public int t2Sum(TreeNode A, int B) {
         // Пишите код тут
+        if (B < 3 || (A.getRight() == null && A.getLeft() == null)) {
+            System.out.println("подходящих вариантов не может быть");
+            return 0;
+        }
         HashSet<Integer> set = new HashSet<>();
         TreeNode firstNod = findFirstNod(A, B);
         if (firstNod == null) {
